@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <title>ARVR - Tugas Texture</title>
+  </head>
+  <body>
+    <a-scene>
+      <a-asset>
+        <!-- Tree Bark Asset -->
+        <img src="texture/tree bark/Bark_007_BaseColor.jpg" alt="" id="bark" />
+        <img
+          src="texture/tree bark/Bark_007_normal.jpg"
+          alt=""
+          id="bark_normal"
+        />
+        <img
+          src="texture/tree bark/Bark_007_Height.png"
+          alt=""
+          id="bark_displacement"
+        />
+        <!-- Metal Asset -->
+        <img src="texture/metal/Metal_006_basecolor.jpg" alt="" id="metal" />
+        <img
+          src="texture/metal/Metal_006_normal.jpg"
+          alt=""
+          id="metal_normal"
+        />
+      </a-asset>
+      <!-- Tree Bark -->
+      <a-box
+        position="-1 1.5 -1.5"
+        rotation="0 45 0"
+        width="1"
+        height="1"
+        depth="1"
+        src="#bark"
+        repeat="1 1"
+        normal-map="#bark_normal"
+        normal-texture-repeat="1 1"
+        normal-scale="1 -1"
+        roughness="0.75"
+      ></a-box>
+
+      <!-- Metal Ball -->
+      <a-sphere
+        position="1 1.5 -1.5"
+        radius="0.75"
+        height="1.5"
+        src="#metal"
+        repeat="1 1"
+        normal-map="#metal_normal"
+        normal-texture-repeat="1 1"
+        normal-scale="1 -1"
+        roughness="0.35"
+        metalness="0.5"
+      ></a-sphere>
+    </a-scene>
+  </body>
+</html>
